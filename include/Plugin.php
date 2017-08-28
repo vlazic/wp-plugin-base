@@ -21,10 +21,13 @@ class Plugin
         // process requests with action parameter
         $this->actionRoutes();
 
-        // load hooks but only for admin user
+        // load hooks
         if (is_admin()) {
-            $this->addFilters();
+            $this->addAdminActions();
+            $this->addAdminFilters();
+        } else {
             $this->addActions();
+            $this->addFilters();
         }
     }
 
