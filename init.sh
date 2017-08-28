@@ -8,7 +8,7 @@ read -p "Enter plugin namespace ($PLUGIN_NAMESPACE_FROM_NAME): " PLUGIN_NAMESPAC
 PLUGIN_NAMESPACE=${PLUGIN_NAMESPACE:-$PLUGIN_NAMESPACE_FROM_NAME}
 
 PLUGIN_SLUG_FROM_NAME=$( echo $PLUGIN_NAME | tr A-Z a-z | tr ' ' - )
-read -p "Enter plugin namespace ($PLUGIN_SLUG_FROM_NAME): " PLUGIN_SLUG ; echo
+read -p "Enter plugin slug ($PLUGIN_SLUG_FROM_NAME): " PLUGIN_SLUG ; echo
 PLUGIN_SLUG=${PLUGIN_SLUG:-$PLUGIN_SLUG_FROM_NAME}
 
 read -p "Enter plugin URI: " PLUGIN_URI ; echo
