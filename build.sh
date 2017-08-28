@@ -21,6 +21,7 @@ composer update -o --no-dev
 rm -fr \
 	build \
 	build.sh \
+	init.sh \
 	composer.json \
 	composer.lock \
 	oracle.sqlite \
