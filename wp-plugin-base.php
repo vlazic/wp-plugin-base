@@ -13,12 +13,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('PLUGIN_VERSION', '1.0.0');
-define('PLUGIN_NS', 'REPLACE_PLUGIN_NAMESPACE');
+define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_VERSION', '1.0.0');
 define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_PATH', dirname(__FILE__));
 define('REPLACE_PLUGIN_NAMESPACE_TEMPLATES', dirname(__FILE__) . '/templates/');
 define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_NAME', dirname(plugin_basename( __FILE__ )));
-define('REPLACE_PLUGIN_NAMESPACE_ASSETS_URL', plugins_url(REPLACE_PLUGIN_NAMESPACE_PLUGIN_NAME . '/assets/'));
+define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_URL', plugins_url(REPLACE_PLUGIN_NAMESPACE_PLUGIN_NAME . '/'));
+define('REPLACE_PLUGIN_NAMESPACE_ASSETS_URL', REPLACE_PLUGIN_NAMESPACE_PLUGIN_URL . 'assets/');
 
 // TODO: remove from production
 ini_set('display_errors', '1');
