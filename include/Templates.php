@@ -6,6 +6,8 @@ class Templates
 {
     public function __call($template, $arguments)
     {
-    	include_once REPLACE_PLUGIN_NAMESPACE_TEMPLATES . $template . '.php';
+        ob_start();
+        include_once REPLACE_PLUGIN_NAMESPACE_TEMPLATES . $template . '.php';
+        echo ob_get_clean();
     }
 }
