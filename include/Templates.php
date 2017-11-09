@@ -6,8 +6,13 @@ class Templates
 {
     public function __call($template, $arguments)
     {
-        ob_start();
-        include_once REPLACE_PLUGIN_NAMESPACE_TEMPLATES . $template . '.php';
-        echo ob_get_clean();
+        // function starts with 'return' and we will return compiled template
+        if (0 === strpos($template, 'return')) {
+            ob_start();
+            include_once FT_TEMPLATES . $template . '.php';
+            return ob_get_clean();
+        }
+        // echo out compiled template
+        include_once FT_TEMPLATES . $template . '.php';
     }
 }
