@@ -17,4 +17,7 @@ mkdir MY-PLUGIN-NAME
 cd MY-PLUGIN-NAME
 git archive --format=tar --remote=git@bitbucket.org:webzadruga/wp-plugin-base.git HEAD | tar xf -
 ./init.sh
+
+composer update
+wp plugin activate MY-PLUGIN-NAME
 ```
