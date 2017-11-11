@@ -3,5 +3,8 @@
         "classmap": [
             "include"
         ]
+    },
+    "require-dev": {
+        "filp/whoops": "^2.1"
     }
 }

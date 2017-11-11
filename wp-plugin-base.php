@@ -20,11 +20,22 @@ define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_NAME', dirname(plugin_basename( __FILE__
 define('REPLACE_PLUGIN_NAMESPACE_PLUGIN_URL', plugins_url(REPLACE_PLUGIN_NAMESPACE_PLUGIN_NAME . '/'));
 define('REPLACE_PLUGIN_NAMESPACE_ASSETS_URL', REPLACE_PLUGIN_NAMESPACE_PLUGIN_URL . 'assets/');
 
-// TODO: remove from production
-ini_set('display_errors', '1');
+// show all errors while developing
+if (WP_DEBUG) {
+	ini_set('display_errors', '1');
+	error_reporting(E_ALL);
+}
 
 // import composer autoload file
 require_once __DIR__ . '/vendor/autoload.php';
+
+// show pretty error web-interface if WP_DEBUG is true
+if (WP_DEBUG && class_exists('\\Whoops\\Run')) {
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
+}
+
 $plugin = \REPLACE_PLUGIN_NAMESPACE\Plugin::getInstance();
 
 // register_activation_hook( __FILE__, [$plugin, 'activatePlugin'] );
