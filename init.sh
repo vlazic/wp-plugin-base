@@ -53,14 +53,12 @@ mv wp-plugin-base.php $PLUGIN_SLUG.php
 
 mkdir -p build
 
-rm -fr README.md
+rm -fr README.md init.sh
 # TODO: create some default readme file
 
 git init
-git add .
-git reset post-commit.sh pre-commit.sh
-git commit -m "First commit"
-git tag 1.0.0
-
 mv post-commit.sh .git/hooks/post-commit
 mv pre-commit.sh .git/hooks/pre-commit
+git add .
+git commit -m "First commit"
+git tag 1.0.0
