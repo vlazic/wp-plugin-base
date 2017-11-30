@@ -1,23 +1,22 @@
-#WP Plugin Base
+# WP Plugin Base
 
-This is recommended template for new WordPress plugin.
+This is opinionated template for new WordPress plugin.
 
-##Features
+## Features
 
 1. Automatic versioning. Every commit will bump next minor version number. 
 2. Automatic creation of plugin .zip file. Zip files are placed in **bulid/** folder after each commit.
-3. Plugin Class with some useful methods
-4. Template Class
+3. Plugin class with some useful methods
+4. Simple Template class
 
-##Installation
+## Installation
 
 Download this project (change *MY-PLUGIN-NAME* to the name of your plugin)
 ```
 mkdir MY-PLUGIN-NAME
 cd MY-PLUGIN-NAME
-git archive --format=tar --remote=git@bitbucket.org:webzadruga/wp-plugin-base.git HEAD | tar xf -
+git clone git@github.com:vlazic/wp-plugin-base.git .
 ./init.sh
 
-composer update
 wp plugin activate MY-PLUGIN-NAME
 ```

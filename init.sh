@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -fr .git/
+
 read -p "Enter plugin name with spaces if it has multiple words: " PLUGIN_NAME ; echo
 read -p "Enter description of plugin: " PLUGIN_DESCRIPTION ; echo
 
